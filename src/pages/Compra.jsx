@@ -81,18 +81,13 @@ const Compra = () => {
 
   const handleOnClick = () => {
     const nombre = data.nombre;
-    const desc = data.descripcion;
-    const price = data.precio;
-    const image = data.imagen;
+    const id = data.id;
     const nombre_postul = "Rodrigo";
     Pago.post({
       total,
       cantidad_boletos,
       nombre_postul,
-      nombre,
-      desc,
-      price,
-      image,
+      id,
     }).then((response) => {
       console.log(response);
     });
@@ -110,7 +105,7 @@ const Compra = () => {
           <Layout subtitle={"DETALLE DE LA ANP"} />
         </Row>
 
-        <Row className="bg-white parent mt-5">
+        <Row className="bg-white parent mt-5" key={data.id}>
           <Col className="me-2">
             <img src={data.imagen} alt="" height="350px" width="560px" />
           </Col>
