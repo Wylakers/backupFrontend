@@ -120,7 +120,7 @@ const Compra = () => {
               <Col>
                 <span className="me-2 fs-5">Cantidad:</span>
                 <button onClick={removeCountHandler}> - </button>
-                <input value={cantidad_boletos} name="cantidad_boletos" />
+                <input value={cantidad_boletos} readOnly />
                 <button onClick={addCountHandler}> + </button>
               </Col>
               <Col className="text-end">
