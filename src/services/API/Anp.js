@@ -1,11 +1,17 @@
 import axios from "axios";
 
+const URI = process.env.REACT_APP_BACKENDURI || "http://localhost:8000";
+
 const getAll = async () => {
-  return await axios.get("http://localhost:8000/anp");
+  const url = URI.concat("/anp");
+
+  return await axios.get(url);
 };
 
 const getOne = async (id) => {
-  return await axios.get(`http://localhost:8000/anp/${id}`);
+  const url = URI.concat(`/anp/${id}`);
+
+  return await axios.get(url);
 };
 
 const Anp = { getAll, getOne };
